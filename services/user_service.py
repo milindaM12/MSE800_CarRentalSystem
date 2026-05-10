@@ -7,16 +7,16 @@ class UserService:
     #     self.file_path = file_path
     #     self.users = self.load_users()
 
-    def load_users(self):
-        try:
-            with open(self.file_path, "r") as f:
-                return [User.from_dict(u) for u in json.load(f)]
-        except:
-            return []
+    # def load_users(self):
+    #     try:
+    #         with open(self.file_path, "r") as f:
+    #             return [User.from_dict(u) for u in json.load(f)]
+    #     except:
+    #         return []
 
-    def save_users(self):
-        with open(self.file_path, "w") as f:
-            json.dump([u.to_dict() for u in self.users], f, indent=4)
+    # def save_users(self):
+    #     with open(self.file_path, "w") as f:
+    #         json.dump([u.to_dict() for u in self.users], f, indent=4)
 
     def register(self, username, password, role):
         conn = get_connection()
