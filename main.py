@@ -142,7 +142,7 @@ def main():
 
             user = user_service.register(username, password, role)
             if user:
-                print("Registered successfully!")
+                print("✓ Registered successfully!")
 
         # ─── LOGIN ───
         elif choice == 2:
@@ -151,10 +151,10 @@ def main():
 
             user = user_service.login(username, password)
             if not user:
-                print("Invalid login. Please try again.")
+                print("✗ Invalid login. Please try again.")
                 continue
 
-            print(f"\nWelcome, {username}! (Role: {user.get_role()})")
+            print(f"\n✓ Welcome, {username}! (Role: {user.get_role()})")
 
             # ════════════════ ADMIN MENU ════════════════
             if user.get_role() == "admin":
@@ -188,9 +188,9 @@ def main():
                                 int(input("Max rental days: "))
                             )
                             car_service.add_car(car)
-                            print("Car added successfully!")
+                            print("✓ Car added successfully!")
                         except ValueError as e:
-                            print(f"Error: {e}")
+                            print(f"✗ Error: {e}")
 
                     # --- View Cars ---
                     elif choice == 2:
@@ -201,7 +201,7 @@ def main():
                         car_id = input("Enter Car ID to update: ").strip()
                         car = car_service.get_car_by_id(car_id)
                         if not car:
-                            print("Car not found.")
+                            print("✗ Car not found.")
                             continue
                         print(f"Updating: {car.get_details()}")
                         try:
@@ -221,9 +221,9 @@ def main():
                             success = car_service.update_car(
                                 car_id, brand, model, year, mileage, price, min_d, max_d
                             )
-                            print("Car updated!" if success else "Update failed.")
+                            print("✓ Car updated!" if success else "✗ Update failed.")
                         except ValueError as e:
-                            print(f"Error: {e}")
+                            print(f"✗ Error: {e}")
 
                     # --- Delete Car ---
                     elif choice == 4:
@@ -238,16 +238,16 @@ def main():
                     elif choice == 6:
                         booking_id = input("Enter Booking ID to approve: ").strip()
                         success = booking_service.update_status(booking_id, "APPROVED")
-                        print("Booking approved!" if success else "Booking not found.")
+                        print("✓ Booking approved!" if success else "✗ Booking not found.")
 
                     # --- Reject Booking ---
                     elif choice == 7:
                         booking_id = input("Enter Booking ID to reject: ").strip()
                         success = booking_service.update_status(booking_id, "REJECTED")
                         if success:
-                            print("Booking rejected. Car availability restored.")
+                            print("✓ Booking rejected. Car availability restored.")
                         else:
-                            print("Booking not found.")
+                            print("✗ Booking not found.")
 
                     elif choice == 8:
                         print("Logged out.")
@@ -285,11 +285,11 @@ def main():
                             car = car_service.get_car_by_id(car_id)
 
                             if not car:
-                                print("Car not found.")
+                                print("✗ Car not found.")
                                 continue
 
                             if not car.is_available():
-                                print("This car is currently unavailable.")
+                                print("✗ This car is currently unavailable.")
                                 continue
 
                             days = int(input("Number of rental days: "))
@@ -310,7 +310,7 @@ def main():
                                 ).strip().lower()
                                 if use_points == "y":
                                     fee, points_used = apply_loyalty_discount(points, fee)
-                                    print(f" {points_used} points redeemed. "
+                                    print(f" ✓ {points_used} points redeemed. "
                                           f"Discounted Fee: ${fee:.2f}")
 
                             confirm = input(f"\n  Confirm booking for ${fee:.2f}? (y/n): ").strip().lower()
@@ -330,10 +330,10 @@ def main():
                             # Mark car as unavailable
                             car_service.update_availability(car_id, False)
 
-                            print("Booking created! Awaiting admin approval.")
+                            print("✓ Booking created! Awaiting admin approval.")
 
                         except ValueError as e:
-                            print(f"Error: {e}")
+                            print(f"✗ Error: {e}")
 
                     # --- View My Bookings ---
                     elif choice == 3:

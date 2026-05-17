@@ -146,16 +146,16 @@ The application will initialise the database and present the main menu.
 On first run, register an admin account:
 ```
 Choice: 1 (Register)
-Username: admin
-Password: admin123
+Username: yasas
+Password: 1234
 Role: admin
 ```
 
 Then register a customer:
 ```
 Choice: 1 (Register)
-Username: alice
-Password: pass123
+Username: sam
+Password: 1234
 Role: customer
 ```
 
