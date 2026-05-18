@@ -13,7 +13,7 @@ Innovative Feature:
 Usage:
     python main.py
 
-Author: [Your Name]
+Author: [Yasas Milinda Manamperi]
 Version: 1.1.0
 """
 
