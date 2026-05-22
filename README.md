@@ -130,19 +130,9 @@ car_rental_system/
 ## How to Run
 
 # 1. Unzip and enter the folder (run from the project root directory)
-cd CAR RENTAL SYSTEM
+cd MSE800_CarRentalSystem-main
 
-# 2. Create virtual environment
-python -m venv venv
-
-# 3. Activate it
-venv\Scripts\activate       ← Windows
-source venv/bin/activate    ← macOS/Linux
-
-# 4. Install dependencies
-pip install -r requirements.txt
-
-# 5. Run
+# 2. Run
 python main.py
 
 ---
@@ -165,6 +155,14 @@ Then register a customer:
 ```
 Choice: 1 (Register)
 Username: sam
+Password: 1234
+Role: customer
+```
+
+Register another customer:
+```
+Choice: 1 (Register)
+Username: paul
 Password: 1234
 Role: customer
 ```
