@@ -129,7 +129,7 @@ car_rental_system/
 
 ## How to Run
 
-# 1. Unzip the dist file (When database connection is success, below message shows in exe file run)
+# 1. Unzip the "Release Build Zip" or "dist" file (When database connection is success, below message shows in exe file run)
 Database exists: True
 [DB] Database initialised successfully.
 
