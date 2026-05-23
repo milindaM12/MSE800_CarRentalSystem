@@ -129,7 +129,13 @@ car_rental_system/
 
 ## How to Run
 
-# 1. Unzip and enter the folder (run from the project root directory)
+# 1. Unzip the disc file
+
+# 2. Run the exe file
+
+OR
+
+# 1. Unzip the downloaded folder from github and enter to the folder (run from the project root directory)
 cd MSE800_CarRentalSystem-main
 
 # 2. Run
