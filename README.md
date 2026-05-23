@@ -129,7 +129,9 @@ car_rental_system/
 
 ## How to Run
 
-# 1. Unzip the disc file
+# 1. Unzip the dist file (When database connection is success, below message shows in exe file run)
+Database exists: True
+[DB] Database initialised successfully.
 
 # 2. Run the exe file
 
