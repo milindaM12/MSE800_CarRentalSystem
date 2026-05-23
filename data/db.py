@@ -24,15 +24,24 @@ def get_db_path() -> str:
     if getattr(sys, 'frozen', False):
         base_path = os.path.dirname(sys.executable)
 
-    # If running normally in VS Code / Python
+    # Running in VSCode/Python
     else:
-        base_path = os.path.dirname(os.path.abspath(__file__))
+        base_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..")
+        )
 
-    return os.path.join(base_path, "..", "car_rental.db")
+    return os.path.join(base_path, "car_rental.db")
+
+    # If running normally in VS Code / Python
+    # else:
+    #     base_path = os.path.dirname(os.path.abspath(__file__))
+
+    # return os.path.join(base_path, "..", "car_rental.db")
 
 
 # Centralised database path
-DB_PATH = os.path.abspath(get_db_path())
+# DB_PATH = os.path.abspath(get_db_path())
+DB_PATH = get_db_path()
 
 
 def get_connection() -> sqlite3.Connection:
@@ -45,5 +54,8 @@ def get_connection() -> sqlite3.Connection:
     Returns:
         sqlite3.Connection: An active connection to the SQLite database.
     """
+
+    print("Database path:", DB_PATH)
+    print("Database exists:", os.path.exists(DB_PATH))
 
     return sqlite3.connect(DB_PATH)
