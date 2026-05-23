@@ -162,6 +162,14 @@ Role: customer
 Register another customer:
 ```
 Choice: 1 (Register)
+Username: pete
+Password: 1234
+Role: customer
+```
+
+Register another customer:
+```
+Choice: 1 (Register)
 Username: paul
 Password: 1234
 Role: customer
