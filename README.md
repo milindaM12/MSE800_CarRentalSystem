@@ -1,4 +1,4 @@
-# Car Rental System — README
+# Car Rental System
 
 **Version:** 1.1.0  
 **Developer:** Yasas Milinda Manamperi  
